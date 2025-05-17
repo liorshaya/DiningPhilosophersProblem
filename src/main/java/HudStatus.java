@@ -13,9 +13,8 @@ public class HudStatus extends JPanel {
 
         for (Philosof p : philosofList) {
             JLabel label = new JLabel();
-            label.setFont(new Font("Arial", Font.BOLD, 16));
+            label.setFont(new Font("Arial", Font.BOLD, 18));
             label.setForeground(Color.BLACK);
-            label.setText(p.getName() + " - initializing...");
             this.add(label);
             labels.add(label);
         }
