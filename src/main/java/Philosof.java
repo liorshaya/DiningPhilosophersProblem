@@ -17,7 +17,7 @@ public class Philosof extends JPanel {
     private Fork fork2;
 
     public Philosof(String name, Fork fork1, Fork fork2, Waiter waiter, int x, int y){
-        this.setBounds(x, y, 70, 70);
+        this.setBounds(x, y, 60, 60);
         this.setOpaque(false);
 
 

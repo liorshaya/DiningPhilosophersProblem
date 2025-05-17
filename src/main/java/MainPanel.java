@@ -23,17 +23,17 @@ public class MainPanel extends JPanel {
 
         Waiter waiter = new Waiter();
 
-        Fork fork1 = new Fork(1, 400, 250);
-        Fork fork2 = new Fork(2, 400, 450);
-        Fork fork3 = new Fork(3, 650, 450);
-        Fork fork4 = new Fork(4, 680, 280);
-        Fork fork5 = new Fork(5, 450, 530);
+        Fork fork1 = new Fork(1, 453, 201);
+        Fork fork2 = new Fork(2, 650, 217);
+        Fork fork3 = new Fork(3, 717, 370);
+        Fork fork4 = new Fork(4, 555, 500);
+        Fork fork5 = new Fork(5, 350, 380);
 
-        Philosof philosof1 = new Philosof("Boris",  fork1, fork2, waiter ,300 , 140);
-        Philosof philosof2 = new Philosof("Shai",      fork2, fork3, waiter,  300 ,500);
-        Philosof philosof3 = new Philosof("Alba",  fork3, fork4, waiter,690 , 530);
-        Philosof philosof4 = new Philosof("Binyamin",  fork4, fork5, waiter,800 , 320);
-        Philosof philosof5 = new Philosof("Dvora",       fork5, fork1, waiter,700 ,100);
+        Philosof philosof1 = new Philosof("Boris", fork1, fork2, waiter ,520 , 60);
+        Philosof philosof2 = new Philosof("Shai", fork2, fork3, waiter,  770 ,217);
+        Philosof philosof3 = new Philosof("Alba", fork3, fork4, waiter,710 , 510);
+        Philosof philosof4 = new Philosof("Binyamin", fork4, fork5, waiter,328 , 512);
+        Philosof philosof5 = new Philosof("Dvora", fork5, fork1, waiter,270 ,217);
 
 
         this.add(fork1);
