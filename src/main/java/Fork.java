@@ -6,8 +6,8 @@ public class Fork extends JPanel {
     private Philosof heldBy;
 
     public Fork(int number, int x, int y){
-        this.setBounds(x, y, 30, 10); // קובע מיקום וגודל
-        this.setBackground(Color.LIGHT_GRAY);
+        this.setBounds(x, y, 30, 10);
+        this.setOpaque(false);
 
         this.number = number;
         this.heldBy = null;
