@@ -59,6 +59,16 @@ public class MainPanel extends JPanel {
             Utils.sleep(100);
             repaint();
         }).start();
+
+        JButton deletePhilo = new JButton();
+        deletePhilo.setBounds(this.width-200 , this.height-100 , 200 , 100);
+        deletePhilo.setText("Remove one philo");
+        deletePhilo.addActionListener(e -> {
+            philosofList.removeLast();
+            waiter.minusMaxEating();
+        });
+
+        this.add(deletePhilo);
     }
 
     public void paintComponent(Graphics g){
