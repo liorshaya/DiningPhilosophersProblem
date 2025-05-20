@@ -28,6 +28,7 @@ public class HudStatus extends JPanel {
                         case Philosof.WAITING_FOR_FORK_1 -> "Waiting fork 1";
                         case Philosof.WAITING_FOR_FORK_2 -> "Waiting fork 2";
                         case Philosof.EATING -> "Eating";
+                        case Philosof.DEAD -> "Murdered";
                         default -> "Unknown";
                     };
                     labels.get(i).setText(p.getName() + ": " + status + " | Count: " + p.getEatingCount());

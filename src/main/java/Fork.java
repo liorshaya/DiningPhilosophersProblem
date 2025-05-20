@@ -4,10 +4,14 @@ import java.awt.*;
 public class Fork extends JPanel {
     private int number;
     private Philosof heldBy;
+    private final int originalX;
+    private final int originalY;
 
 
     public Fork(int number, int x, int y){
         this.number = number;
+        this.originalX = x;
+        this.originalY = y;
 
         if(this.number % 2 == 1){
             this.setBounds(x, y, 30, 10);
@@ -16,6 +20,7 @@ public class Fork extends JPanel {
             this.setBounds(x, y, 10, 30);
 
         }
+
         this.setOpaque(false);
         this.heldBy = null;
     }
@@ -29,6 +34,15 @@ public class Fork extends JPanel {
 
     public void setHeldBy(Philosof philosof){
         this.heldBy = philosof;
+
+        if (philosof != null) {
+            int x = philosof.getX();
+            int y = philosof.getY();
+            this.setLocation(x + 20, y + 20);
+        } else {
+            this.setLocation(originalX, originalY);
+        }
+
         repaint();
     }
 

@@ -2,6 +2,7 @@ import javax.swing.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainPanel extends JPanel {
@@ -9,6 +10,7 @@ public class MainPanel extends JPanel {
     private int height;
     private int x;
     private int y;
+    private int currentPhilosopherIndex = 4;
 
     public MainPanel(int width, int height, int x, int y){
 
@@ -48,7 +50,7 @@ public class MainPanel extends JPanel {
         this.add(philosof4);
         this.add(philosof5);
 
-        List<Philosof> philosofList = List.of(philosof1, philosof2, philosof3, philosof4, philosof5);
+        List<Philosof> philosofList = new ArrayList<>(List.of(philosof1, philosof2, philosof3, philosof4, philosof5));
 
         HudStatus hud = new HudStatus(philosofList);
         hud.setBounds(10, 490, 300, 150);
@@ -60,12 +62,22 @@ public class MainPanel extends JPanel {
             repaint();
         }).start();
 
+
         JButton deletePhilo = new JButton();
-        deletePhilo.setBounds(this.width-200 , this.height-100 , 200 , 100);
+        deletePhilo.setBounds(this.width - 200 , this.height - 110 , 200 , 80);
         deletePhilo.setText("Remove one philo");
         deletePhilo.addActionListener(e -> {
-            philosofList.removeLast();
-            waiter.minusMaxEating();
+            if (philosofList.size() > 2){
+                if(currentPhilosopherIndex >= 2 && philosofList.size() > 2){
+                    Philosof removed = philosofList.get(currentPhilosopherIndex);
+                    removed.stopRun();
+                    this.remove(removed);
+                    currentPhilosopherIndex--;
+                    repaint();
+                    waiter.minusMaxEating();
+                }
+
+            }
         });
 
         this.add(deletePhilo);
