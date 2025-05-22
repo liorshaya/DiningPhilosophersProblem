@@ -31,6 +31,7 @@ public class MainPanel extends JPanel {
         Fork fork4 = new Fork(4, 555, 500);
         Fork fork5 = new Fork(5, 350, 380);
 
+
         Philosof philosof1 = new Philosof("Boris", fork1, fork2, waiter ,520 , 60);
         Philosof philosof2 = new Philosof("Shai", fork2, fork3, waiter,  770 ,217);
         Philosof philosof3 = new Philosof("Alba", fork3, fork4, waiter,710 , 510);
@@ -68,7 +69,7 @@ public class MainPanel extends JPanel {
         deletePhilo.setText("Remove one philo");
         deletePhilo.addActionListener(e -> {
             if (philosofList.size() > 2){
-                if(currentPhilosopherIndex >= 2 && philosofList.size() > 2){
+                if(currentPhilosopherIndex >= 2){
                     Philosof removed = philosofList.get(currentPhilosopherIndex);
                     removed.stopRun();
                     this.remove(removed);
